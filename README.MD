@@ -5,4 +5,4 @@
 ### 개념 정리
 
 - [리액트란?](./concept/01.React.md)
-- [셋업] (./concept/02.Setup.md)
+- [셋업](./concept/02.Setup.md)
