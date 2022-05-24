@@ -13,6 +13,11 @@ function App() {
         <h4>글제목</h4>
         <p>2월 17일 발행</p>
       </div>
+      <div className="modal">
+        <h4>제목</h4>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
     </div>
   );
 }
