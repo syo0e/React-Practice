@@ -2,7 +2,8 @@ import "./App.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState } from "react";
 import data from "./data.js";
-import { Routes, Route, Link } from "react-router-dom";
+import Detail from "./routes/Detail";
+import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 function App() {
   let [shoes] = useState(data);
   return (
@@ -16,16 +17,24 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-
-      <div className="main-bg"></div>
-
-      <div className="container">
-        <div className="row">
-          {shoes.map((a, i) => {
-            return <Card shoes={shoes[i]} i={i} />;
-          })}
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="main-bg"></div>
+              <div className="container">
+                <div className="row">
+                  {shoes.map((a, i) => {
+                    return <Card shoes={shoes[i]} i={i} />;
+                  })}
+                </div>
+              </div>
+            </>
+          }
+        />
+        <Route path="detail" element={<Detail />} />
+      </Routes>
     </div>
   );
 }
