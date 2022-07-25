@@ -1,4 +1,12 @@
-function Detail() {
+import { useParams } from 'react-router-dom'
+
+function Detail(props) {
+  let {id} = useParams();
+  let 찾은상품 = props.shoes.find(function(x){
+    return x.id == id
+  });
+  console.log(id)
+
   return (
     <div className="container">
       <div className="row">
@@ -9,9 +17,9 @@ function Detail() {
           />
         </div>
         <div className="col-md-6">
-          <h4 className="pt-5">상품명</h4>
-          <p>상품설명</p>
-          <p>120000원</p>
+          <h4 className="pt-5">{찾은상품.title}</h4>
+          <p>{찾은상품.content}</p>
+          <p>{찾은상품.price}</p>
           <button className="btn btn-danger">주문하기</button>
         </div>
       </div>
